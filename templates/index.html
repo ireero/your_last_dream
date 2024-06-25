@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dream Diary</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Dream Diary</h1>
+        <div class="date-block">
+            <span id="current-date">{{ today_date }}</span>
+        </div>
+        <form action="{{ url_for('views.register_dream') }}" method="post">
+            <div class="form-group">
+                <label for="dream">Write your dream:</label>
+                <textarea id="dream" name="dream" rows="4" required></textarea>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
