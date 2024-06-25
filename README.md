@@ -6,7 +6,7 @@ Dream Diary é uma aplicação Flask simples que permite aos usuários escrevere
 ## Estrutura do Projeto
 
 ```plaintext
-dream_diary/
+your_last_dream/
 │
 ├── app.py
 ├── models.py
