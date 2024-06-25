@@ -1,4 +1,4 @@
-# Dream Diary
+# Dream
 
 Dream Diary é uma aplicação Flask simples que permite aos usuários escreverem seus sonhos e armazená-los em um banco de dados SQLite. A aplicação inclui a data e a hora em que cada sonho foi registrado.
 
@@ -18,8 +18,6 @@ dream_diary/
 │ └── script.js
 └── instance/
 └── dreams.db (será criado automaticamente)
-
-bash
 
 
 ## Instalação
