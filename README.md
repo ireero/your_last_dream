@@ -4,20 +4,20 @@ Dream é uma aplicação Flask simples que permite aos usuários escreverem seus
 
 ## Estrutura do Projeto
 
-dream_diary/
-│
-├── app.py
-├── models.py
-├── views.py
-├── templates/
-│ └── index.html
-├── static/
-│ ├── css/
-│ │ └── styles.css
-│ └── js/
-│ └── script.js
-└── instance/
-└── dreams.db (será criado automaticamente)
+dream_diary/\n
+│\n
+├── app.py\n
+├── models.py\n
+├── views.py\n
+├── templates/\n
+│ └── index.html\n
+├── static/\n
+│ ├── css/\n
+│ │ └── styles.css\n
+│ └── js/\n
+│ └── script.js\n
+└── instance/\n
+└── dreams.db (será criado automaticamente)\n
 
 bash
 
