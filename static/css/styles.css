@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto Slab', serif;
-    background: linear-gradient(to bottom, #e0f7ff, #a3dfff); /* Gradiente azul nuvem claro */
-    color: #1E90FF; /* Azul para o texto */
+    background: #002147; /* Azul ainda mais escuro predominante */
+    color: #f0f8ff; /* Azul quase branco para o texto */
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,14 +12,14 @@ body {
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.85); /* Branco com mais transparência */
+    background-color: rgba(255, 255, 255, 0.1); /* Azul quase branco com mais transparência */
     border-radius: 20px; /* Bordas mais arredondadas */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
     padding: 30px 40px; /* Reduzido o padding superior e inferior */
     max-width: 600px;
     width: 100%;
     backdrop-filter: blur(10px); /* Efeito de desfoque para o fundo */
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.85), rgba(245, 245, 245, 0.85));
+    background: linear-gradient(to bottom right, rgba(240, 248, 255, 0.1), rgba(240, 248, 255, 0.1));
     background-size: cover;
     background-repeat: no-repeat;
     text-align: left; /* Alinhar o texto à esquerda */
@@ -27,7 +27,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #1E90FF; /* Azul */
+    color: #f0f8ff; /* Azul quase branco */
     font-size: 2.5em; /* Tamanho reduzido para o título */
     margin-bottom: 15px; /* Reduzido o espaçamento inferior */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
@@ -36,21 +36,23 @@ h1 {
     align-items: center;
 }
 
-h1 i {
-    margin-right: 10px; /* Espaço entre o ícone e o texto */
+h1 .logo {
+    margin-right: 10px; /* Espaço entre a logo e o texto */
+    width: 50px; /* Ajustar o tamanho da logo conforme necessário */
+    height: auto; /* Manter a proporção da logo */
 }
 
 .date-block {
     text-align: center;
     margin-bottom: 15px; /* Reduzido o espaçamento inferior */
     font-size: 1.2em; /* Tamanho reduzido da fonte da data */
-    color: #1E90FF; /* Azul */
+    color: #f0f8ff; /* Azul quase branco */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15); /* Sombra leve para o texto */
 }
 
 label {
     font-weight: bold;
-    color: #1E90FF; /* Azul */
+    color: #f0f8ff; /* Azul quase branco */
     display: block;
     margin-top: 10px;
     font-size: 1.2em; /* Tamanho da fonte dos labels */
@@ -61,20 +63,20 @@ textarea {
     padding: 14px;
     margin: 10px 0;
     box-sizing: border-box;
-    border: 2px solid #1E90FF; /* Borda azul */
+    border: 2px solid #f0f8ff; /* Borda azul quase branco */
     border-radius: 10px; /* Bordas mais arredondadas */
     font-size: 16px;
     font-family: 'Roboto Slab', serif;
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 0.95));
+    background: rgba(240, 248, 255, 0.1); /* Transparente para destacar o azul escuro */
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    color: #000000; /* Cor do texto preto */
+    color: #f0f8ff; /* Cor do texto azul quase branco */
     height: 300px; /* Altura aumentada */
 }
 
 input[type=submit] {
     width: 100%; /* Cobrir toda a largura */
-    background-color: #87CEEB; /* Azul claro */
-    color: #104E8B; /* Azul mais escuro para o texto */
+    background-color: #f0f8ff; /* Azul quase branco */
+    color: #002147; /* Azul ainda mais escuro para o texto */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s; /* Adiciona transição suave para a cor e a transformação */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
@@ -87,7 +89,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #4682B4; /* Azul mais escuro */
+    background-color: #4682B4; /* Azul intermediário */
     transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
 }
 
