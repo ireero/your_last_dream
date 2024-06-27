@@ -15,6 +15,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Inicialização do SQLAlchemy
 db = SQLAlchemy(app)
 
+from .actions import actions
+app.register_blueprint(actions)
+
 # Importar modelos e blueprints
 from .views import views
 
