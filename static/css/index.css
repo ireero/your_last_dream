@@ -1,33 +1,34 @@
 body {
-    font-family: 'Roboto Slab', serif;
-    background: #002147; /* Azul ainda mais escuro predominante */
-    color: #f0f8ff; /* Azul quase branco para o texto */
+    font-family: 'Indie Flower', cursive;
+    background-color: #D84315; /* Laranja escuro predominante */
+    color: #ffffff; /* Branco para o texto */
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    text-align: center; /* Centralizar texto */
+    text-align: center;
+    overflow: hidden;
+    position: relative;
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.1); /* Azul quase branco com mais transparência */
+    background-color: rgba(255, 255, 255, 0.2); /* Transparência para destacar o laranja */
     border-radius: 20px; /* Bordas mais arredondadas */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
     padding: 30px 40px; /* Reduzido o padding superior e inferior */
     max-width: 600px;
     width: 100%;
     backdrop-filter: blur(10px); /* Efeito de desfoque para o fundo */
-    background: linear-gradient(to bottom right, rgba(240, 248, 255, 0.1), rgba(240, 248, 255, 0.1));
-    background-size: cover;
-    background-repeat: no-repeat;
     text-align: left; /* Alinhar o texto à esquerda */
+    position: relative; /* Para o z-index funcionar */
+    z-index: 1;
 }
 
 h1 {
     text-align: center;
-    color: #f0f8ff; /* Azul quase branco */
+    color: #ffffff; /* Branco */
     font-size: 2.5em; /* Tamanho reduzido para o título */
     margin-bottom: 15px; /* Reduzido o espaçamento inferior */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
@@ -46,13 +47,13 @@ h1 .logo {
     text-align: center;
     margin-bottom: 15px; /* Reduzido o espaçamento inferior */
     font-size: 1.2em; /* Tamanho reduzido da fonte da data */
-    color: #f0f8ff; /* Azul quase branco */
+    color: #ffffff; /* Branco */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15); /* Sombra leve para o texto */
 }
 
 label {
     font-weight: bold;
-    color: #f0f8ff; /* Azul quase branco */
+    color: #ffffff; /* Branco */
     display: block;
     margin-top: 10px;
     font-size: 1.2em; /* Tamanho da fonte dos labels */
@@ -63,20 +64,20 @@ textarea {
     padding: 14px;
     margin: 10px 0;
     box-sizing: border-box;
-    border: 2px solid #f0f8ff; /* Borda azul quase branco */
+    border: 2px solid #FF8C00; /* Borda laranja claro */
     border-radius: 10px; /* Bordas mais arredondadas */
     font-size: 16px;
-    font-family: 'Roboto Slab', serif;
-    background: rgba(240, 248, 255, 0.1); /* Transparente para destacar o azul escuro */
+    font-family: 'Indie Flower', cursive;
+    background: rgba(255, 255, 255, 0.1); /* Transparente para destacar o laranja */
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    color: #f0f8ff; /* Cor do texto azul quase branco */
+    color: #ffffff; /* Cor do texto branca */
     height: 300px; /* Altura aumentada */
 }
 
-input[type=submit] {
+button[type=submit] {
     width: 100%; /* Cobrir toda a largura */
-    background-color: #f0f8ff; /* Azul quase branco */
-    color: #002147; /* Azul ainda mais escuro para o texto */
+    background-color: #FF8C00; /* Laranja claro */
+    color: #ffffff; /* Texto branco */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s; /* Adiciona transição suave para a cor e a transformação */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
@@ -88,12 +89,48 @@ input[type=submit] {
     font-size: 16px;
 }
 
-input[type=submit]:hover {
-    background-color: #4682B4; /* Azul intermediário */
+button[type=submit] i {
+    font-size: 1.5em; /* Tamanho do ícone */
+}
+
+button[type=submit]:hover {
+    background-color: #D84315; /* Laranja escuro */
     transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
 }
 
 /* Adiciona espaçamento entre o botão e a textarea */
 .form-group.submit-btn {
     margin-top: 20px;
+}
+
+/* Efeitos de nuvem no plano de fundo */
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    width: 200px; /* Ajustar o tamanho das nuvens conforme necessário */
+    opacity: 0.7;
+}
+
+#cloud1 {
+    top: 10%;
+    left: 15%;
+}
+
+#cloud2 {
+    top: 30%;
+    left: 60%;
+}
+
+#cloud3 {
+    top: 60%;
+    left: 25%;
 }

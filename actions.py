@@ -9,15 +9,17 @@ actions = Blueprint('actions', __name__)
 
 @actions.route('/register_dream', methods=['POST'])
 def register_and_analise_dream():
-    llm = LLM()
+    print('Aqui')
     if request.method == 'POST':
+        print('Aqui 2')
         dream = request.form['dream']
-        final_response_text = llm.psicologic_analises(dream=dream)
+        # llm = LLM()
+        # final_response_text = llm.psicologic_analises(dream=dream)
         date = datetime.now().strftime('%Y%m%d')
         time = datetime.now().strftime('%H:%M')
         new_dream = Dreams(text_dream=dream, date=date, time=time)
-        db.session.add(new_dream)
-        db.session.commit()
-        return redirect(url_for('views.index'))
+        # db.session.add(new_dream)
+        # db.session.commit()
+        return redirect(url_for('views.view_analysis', dream=dream))
     today_date = datetime.today().strftime('%Y-%m-%d')
     return render_template('index.html', today_date=today_date)

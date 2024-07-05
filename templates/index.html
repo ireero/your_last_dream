@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dream</title>
-    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Adicionar ícones -->
+    <title>Nap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
 </head>
 <body>
     <div class="container">
-        <h1><img src="{{ url_for('static', filename='images/logo_dream.png') }}" alt="Logo" class="logo"> Dream</h1>
+        <h1><img src="{{ url_for('static', filename='images/logo_nap.png') }}" alt="Logo" class="logo"> Nap</h1>
         <div class="date-block">
             <span id="current-date">{{ today_date }}</span>
         </div>
-        <form action="/register_dream" method="post">
+        <form action="{{ url_for('actions.register_and_analise_dream') }}" method="post">
             <div class="form-group">
                 <label for="dream">Escreva o seu sonho:</label>
                 <textarea id="dream" name="dream" rows="4" required></textarea>
             </div>
             <div class="form-group submit-btn">
-                <input type="submit" value="Enviar">
+                <button type="submit" id="submit-button"><i class="fas fa-cloud"></i></button>
             </div>
         </form>
+    </div>
+    <div class="clouds">
+        <img src="{{ url_for('static', filename='images/nuvem.png') }}" class="cloud" id="cloud1">
+        <img src="{{ url_for('static', filename='images/nuvem.png') }}" class="cloud" id="cloud2">
+        <img src="{{ url_for('static', filename='images/nuvem.png') }}" class="cloud" id="cloud3">
     </div>
 </body>
 </html>

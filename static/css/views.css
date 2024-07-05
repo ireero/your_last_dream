@@ -1,0 +1,88 @@
+/* Header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #D84315; /* Cor laranja escuro */
+}
+
+.header-container h1 {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+.header-container .logo {
+    margin-right: 10px;
+    width: 40px;
+    height: auto;
+}
+
+.header-container nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-left: 20px;
+}
+
+.header-container nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.container {
+    background-color: rgba(255, 255, 255, 0.3); /* Transparência para destacar o laranja */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px 30px;
+    max-width: 800px;
+    width: 90%;
+    margin: 30px auto;
+    backdrop-filter: blur(10px);
+}
+
+.container h2, .container h3 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container p, .container ul {
+    color: #ffffff;
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+.container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.visualizations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.visualizations img.graph {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* Footer */
+.footer-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #D84315; /* Cor laranja escuro */
+    color: #ffffff;
+}
+
+.footer-container p {
+    margin: 0;
+    font-size: 1em;
+}
