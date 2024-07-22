@@ -7,14 +7,34 @@ from .app import db
 
 actions = Blueprint('actions', __name__)
 
+@actions.route('/login', methods=['POST'])
+def login():
+
+    user = request.form['username']
+    pwd = request.form['password']
+
+    print(f'Usuário: {user}')
+    print(f'Senha: {pwd}')
+
+    print('Passou pelo login')
+
+    return 'ok'
+
+@actions.route('/register', methods=['POST','GET'])
+def register():
+    return render_template('signup.html')
+
+
 @actions.route('/register_dream', methods=['POST'])
 def register_and_analise_dream():
-    print('Aqui')
     if request.method == 'POST':
-        print('Aqui 2')
         dream = request.form['dream']
-        # llm = LLM()
-        # final_response_text = llm.psicologic_analises(dream=dream)
+        llm = LLM()
+
+        final_response_text_psicologic = llm.psicologic_analises(dream=dream)
+        final_response_resume = llm.resume_analises(dream=dream)
+        final_response_imaginary_gestions = llm.imaginary_sugestions(dream=dream)
+
         date = datetime.now().strftime('%Y%m%d')
         time = datetime.now().strftime('%H:%M')
         new_dream = Dreams(text_dream=dream, date=date, time=time)

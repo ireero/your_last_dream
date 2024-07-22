@@ -7,8 +7,8 @@ views = Blueprint('views', __name__)
 
 @views.route('/', methods=['GET', 'POST'])
 def index():
-    today_date = datetime.today().strftime('%d/%m/%Y')
-    return render_template('index.html', today_date=today_date)
+    # today_date = datetime.today().strftime('%d/%m/%Y')
+    return render_template('login.html')
 
 @views.route('/view_analysis')
 def view_analysis():

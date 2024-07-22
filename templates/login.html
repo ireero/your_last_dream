@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nap - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="static/css/index.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="static/js/scripts.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="static/images/logo_nap.png" alt="Logo" class="logo"> Nap</h1>
+        <div class="form-container">
+            <form action="login_action_url" method="post">
+                <div class="form-group">
+                    <label for="username">Usuário:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group submit-btn">
+                    <button type="submit" id="login-button">Logar</button>
+                </div>
+                <div class="form-group register-btn">
+                    <a href="{{ url_for('actions.register') }}" id="register-link">Cadastrar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="clouds">
+        <img src="static/images/nuvem.png" class="cloud" id="cloud1">
+        <img src="static/images/nuvem.png" class="cloud" id="cloud2">
+        <img src="static/images/nuvem.png" class="cloud" id="cloud3">
+    </div>
+</body>
+</html>
