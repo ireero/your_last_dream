@@ -1,6 +1,7 @@
 body {
     font-family: 'Indie Flower', cursive;
-    background-color: #D84315; /* Laranja escuro predominante */
+    background: linear-gradient(to bottom, #8B2C10, #B35408, #CC8E1F);
+    background-blend-mode: multiply;
     color: #ffffff; /* Branco para o texto */
     margin: 0;
     padding: 0;
@@ -11,6 +12,18 @@ body {
     text-align: center;
     overflow: hidden;
     position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><filter id="a" x="0" y="0"><feTurbulence baseFrequency="0.05" numOctaves="3" result="t"/><feDisplacementMap in="SourceGraphic" in2="t" scale="50"/></filter></defs><rect width="100%" height="100%" filter="url(#a)" /></svg>');
+    opacity: 0.4; /* Ajuste a opacidade conforme necessário */
+    z-index: -1;
 }
 
 .container {
@@ -72,33 +85,30 @@ input[type=text], input[type=password] {
     color: #ffffff; /* Cor do texto branca */
 }
 
-button[type=submit], a#register-link {
-    display: block;
-    width: 100%; /* Cobrir toda a largura */
-    background-color: #FFD700; /* Mostarda */
-    color: #D84315; /* Texto laranja escuro */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Adiciona transição suave para a cor e a transformação */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
-    font-weight: bold; /* Texto em negrito */
-    text-align: center;
-    border: none; /* Remove a borda padrão */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 14px;
-    font-size: 16px;
+/* Estilo para os links */
+a.custom-link {
+    display: inline-block;
+    width: 80%; /* Aumenta a largura dos links */
+    padding: 20px; /* Aumenta o padding para mais destaque */
+    margin: 2px 0; /* Reduz a margem vertical para aproximar os links */
+    color: #FFD700; /* Mostarda */
+    font-size: 1.5em; /* Aumenta o tamanho da fonte */
+    font-weight: bold;
     text-decoration: none; /* Remove a sublinha */
-    margin-top: 10px;
+    transition: color 0.3s, transform 0.3s; /* Adiciona transição suave para a cor e a transformação */
+    border-radius: 10px; /* Bordas arredondadas */
+    background-color: transparent; /* Fundo transparente */
 }
 
-button[type=submit]:hover, a#register-link:hover {
-    background-color: #D84315; /* Laranja escuro */
-    color: #ffffff; /* Texto branco */
+a.custom-link:hover {
+    color: #ffffff; /* Texto branco ao passar o mouse */
     transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
 }
 
-/* Adiciona espaçamento entre os botões */
+/* Adiciona espaçamento entre os links */
 .form-group.submit-btn, .form-group.register-btn {
     margin-top: 10px;
+    text-align: center; /* Centraliza o conteúdo do grupo de formulários */
 }
 
 /* Efeitos de nuvem no plano de fundo */
@@ -131,28 +141,4 @@ button[type=submit]:hover, a#register-link:hover {
 #cloud3 {
     top: 50%;
     left: 30%;
-}
-
-/* Certifique-se de que este bloco de código está presente no arquivo login.css */
-button[type=submit], a#register-link {
-    width: 100%; /* Cobrir toda a largura */
-    background-color: #FFD700; /* Mostarda */
-    color: #D84315; /* Texto laranja escuro */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Adiciona transição suave para a cor e a transformação */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
-    font-weight: bold; /* Texto em negrito */
-    text-align: center;
-    border: none; /* Remove a borda padrão */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 14px;
-    font-size: 16px;
-    text-decoration: none; /* Remove a sublinha */
-    margin-top: 10px;
-}
-
-button[type=submit]:hover, a#register-link:hover {
-    background-color: #D84315; /* Laranja escuro */
-    color: #ffffff; /* Texto branco */
-    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
 }

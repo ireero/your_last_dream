@@ -23,10 +23,10 @@
                     <input type="password" id="password" name="password" required>
                 </div>
                 <div class="form-group submit-btn">
-                    <button type="submit" id="login-button">Logar</button>
+                    <a href="{{ url_for('actions.login') }}" class="custom-link" id="login-button">Logar</a>
                 </div>
                 <div class="form-group register-btn">
-                    <a href="{{ url_for('actions.register') }}" id="register-link">Cadastrar</a>
+                    <a href="{{ url_for('actions.register') }}" class="custom-link" id="register-link">Cadastrar</a>
                 </div>
             </form>
         </div>
