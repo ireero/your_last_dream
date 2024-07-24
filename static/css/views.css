@@ -1,4 +1,5 @@
-/* Header */
+/* views.css */
+
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -48,15 +49,10 @@
     margin-bottom: 20px;
 }
 
-.container p, .container ul {
+.container p {
     color: #000000; /* Mudança de cor para preto */
     font-size: 1.2em;
     line-height: 1.6em;
-}
-
-.container ul {
-    list-style-type: disc;
-    padding-left: 20px;
 }
 
 .visualizations {

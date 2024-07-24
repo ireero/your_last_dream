@@ -13,5 +13,7 @@ def index():
 @views.route('/view_analysis')
 def view_analysis():
     dream = request.args.get('dream')
-    # Aqui você pode adicionar a lógica para buscar a análise do sonho
-    return render_template('views.html', dream=dream)
+    ai_analysis = request.args.get('ai_analysis')
+    suggestions = request.args.get('suggestions')
+    
+    return render_template('views.html', dream=dream, ai_analysis=ai_analysis, suggestions=suggestions)

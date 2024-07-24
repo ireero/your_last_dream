@@ -18,7 +18,10 @@ def login():
 
     print('Passou pelo login')
 
-    return 'ok'
+    if user == 'ireero' and pwd == '123':
+        return render_template('index.html')
+    else:
+        return render_template('login.html')
 
 @actions.route('/register', methods=['POST','GET'])
 def register():
@@ -27,7 +30,9 @@ def register():
 
 @actions.route('/register_dream', methods=['POST'])
 def register_and_analise_dream():
+    print('aaqui')
     if request.method == 'POST':
+        print('aaqui2')
         dream = request.form['dream']
         llm = LLM()
 
@@ -40,6 +45,7 @@ def register_and_analise_dream():
         new_dream = Dreams(text_dream=dream, date=date, time=time)
         # db.session.add(new_dream)
         # db.session.commit()
-        return redirect(url_for('views.view_analysis', dream=dream))
+        return redirect(url_for('views.view_analysis', dream=dream, ai_analysis=final_response_text_psicologic, suggestions=final_response_imaginary_gestions))
     today_date = datetime.today().strftime('%Y-%m-%d')
+    print('aaqui23')
     return render_template('index.html', today_date=today_date)

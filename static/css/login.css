@@ -63,7 +63,7 @@ input[type=text], input[type=password] {
     padding: 14px;
     margin: 10px 0;
     box-sizing: border-box;
-    border: 2px solid #FF8C00; /* Borda laranja claro */
+    border: 2px solid #FFD700; /* Mostarda */
     border-radius: 10px; /* Bordas mais arredondadas */
     font-size: 16px;
     font-family: 'Indie Flower', cursive;
@@ -72,31 +72,11 @@ input[type=text], input[type=password] {
     color: #ffffff; /* Cor do texto branca */
 }
 
-button[type=submit] {
-    width: 100%; /* Cobrir toda a largura */
-    background-color: #FF8C00; /* Laranja claro */
-    color: #ffffff; /* Texto branco */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Adiciona transição suave para a cor e a transformação */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
-    font-weight: bold; /* Texto em negrito */
-    text-align: center;
-    border: none; /* Remove a borda padrão */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 14px;
-    font-size: 16px;
-}
-
-button[type=submit]:hover {
-    background-color: #D84315; /* Laranja escuro */
-    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
-}
-
-a#register-link {
+button[type=submit], a#register-link {
     display: block;
-    width: 100%;
-    background-color: #FF8C00; /* Laranja claro */
-    color: #ffffff; /* Texto branco */
+    width: 100%; /* Cobrir toda a largura */
+    background-color: #FFD700; /* Mostarda */
+    color: #D84315; /* Texto laranja escuro */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s; /* Adiciona transição suave para a cor e a transformação */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
@@ -110,8 +90,9 @@ a#register-link {
     margin-top: 10px;
 }
 
-a#register-link:hover {
+button[type=submit]:hover, a#register-link:hover {
     background-color: #D84315; /* Laranja escuro */
+    color: #ffffff; /* Texto branco */
     transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
 }
 
@@ -152,23 +133,26 @@ a#register-link:hover {
     left: 30%;
 }
 
-/* Adicione este bloco de código ao final do arquivo index.css */
-textarea {
-    width: 100%;
+/* Certifique-se de que este bloco de código está presente no arquivo login.css */
+button[type=submit], a#register-link {
+    width: 100%; /* Cobrir toda a largura */
+    background-color: #FFD700; /* Mostarda */
+    color: #D84315; /* Texto laranja escuro */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Adiciona transição suave para a cor e a transformação */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
+    font-weight: bold; /* Texto em negrito */
+    text-align: center;
+    border: none; /* Remove a borda padrão */
+    border-radius: 10px; /* Bordas arredondadas */
     padding: 14px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: 2px solid #FFD700; /* Mostarda */
-    border-radius: 10px; /* Bordas mais arredondadas */
     font-size: 16px;
-    font-family: 'Indie Flower', cursive;
-    background: rgba(255, 255, 255, 0.1); /* Transparente para destacar o laranja */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    color: #ffffff; /* Cor do texto branca */
-    resize: vertical; /* Permite o redimensionamento vertical */
+    text-decoration: none; /* Remove a sublinha */
+    margin-top: 10px;
 }
 
-/* Corrigir largura dos botões */
-button[type=submit], a#register-link {
-    width: 100%;
+button[type=submit]:hover, a#register-link:hover {
+    background-color: #D84315; /* Laranja escuro */
+    color: #ffffff; /* Texto branco */
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
 }
