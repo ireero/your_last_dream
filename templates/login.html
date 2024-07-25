@@ -10,8 +10,10 @@
     <script src="{{ url_for('static', filename='js/scripts_login.js') }}" defer></script>
 </head>
 <body>
-    <div class="container">
+    <header class="header-container">
         <h1><img src="{{ url_for('static', filename='images/logo_nap.png') }}" alt="Logo" class="logo"> Nap</h1>
+    </header>
+    <main class="main-container">
         <div class="form-container">
             <form action="{{ url_for('actions.login') }}" method="post">
                 <div class="form-group">
@@ -23,14 +25,19 @@
                     <input type="password" id="password" name="password" required>
                 </div>
                 <div class="form-group submit-btn">
-                    <a href="{{ url_for('actions.login') }}" class="custom-link" id="login-button">Logar</a>
+                    <button type="submit" id="login-button">Logar</button>
                 </div>
                 <div class="form-group register-btn">
-                    <a href="{{ url_for('actions.register') }}" class="custom-link" id="register-link">Cadastrar</a>
+                    <a href="{{ url_for('actions.register') }}">
+                        <button type="button" id="register-link">Cadastrar</button>
+                    </a>
                 </div>
             </form>
         </div>
-    </div>
+    </main>
+    <footer class="footer-container">
+        <p>&copy; 2024 Nap. Todos os direitos reservados.</p>
+    </footer>
     <div class="clouds">
         <img src="{{ url_for('static', filename='images/nuvem.png') }}" class="cloud" id="cloud1">
         <img src="{{ url_for('static', filename='images/nuvem.png') }}" class="cloud" id="cloud2">

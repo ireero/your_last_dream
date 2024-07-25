@@ -10,8 +10,10 @@
     <script src="{{ url_for('static', filename='js/scripts_index.js') }}" defer></script>
 </head>
 <body>
-    <div class="container">
+    <header class="header-container">
         <h1><img src="{{ url_for('static', filename='images/logo_nap.png') }}" alt="Logo" class="logo"> Nap</h1>
+    </header>
+    <main class="main-container">
         <div class="date-block">
             <span id="current-date">{{ today_date }}</span>
         </div>
@@ -19,14 +21,17 @@
             <div class="form-group">
                 <label for="dream">Escreva o seu sonho:</label>
                 <textarea id="dream" name="dream" rows="4" required></textarea>
+                <img src="{{ url_for('static', filename='images/nuvem.png') }}" class="cloud" id="cloud-over-input">
             </div>
             <div class="form-group submit-btn">
                 <button type="submit" id="submit-button"><i class="fas fa-cloud"></i></button>
             </div>
         </form>
-    </div>
+    </main>
+    <footer class="footer-container">
+        <p>&copy; 2024 Nap. Todos os direitos reservados.</p>
+    </footer>
     <div class="clouds">
-        <img src="{{ url_for('static', filename='images/nuvem.png') }}" class="cloud" id="cloud1">
         <img src="{{ url_for('static', filename='images/nuvem.png') }}" class="cloud" id="cloud2">
         <img src="{{ url_for('static', filename='images/nuvem.png') }}" class="cloud" id="cloud3">
     </div>

@@ -1,133 +1,143 @@
+/* index.css */
+
 body {
     font-family: 'Indie Flower', cursive;
-    background-color: #D84315; /* Laranja escuro predominante */
-    color: #ffffff; /* Branco para o texto */
+    background-color: #FF4500; /* Laranja do topo */
+    color: #FFFFFF; /* Branco para o texto */
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
-    overflow: hidden;
+    overflow: auto; /* Permite barra de rolagem */
     position: relative;
 }
 
-.container {
-    background-color: rgba(255, 255, 255, 0.2); /* Transparência para destacar o laranja */
+.header-container {
+    width: 100%;
+    padding: 20px;
+    background-color: #FF4500; /* Laranja do topo */
+    z-index: 2; /* Certifica-se de que o header está acima das nuvens */
+    position: relative;
+}
+
+.header-container h1 {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF; /* Branco */
+    justify-content: center;
+}
+
+.header-container .logo {
+    margin-right: 10px;
+    width: 50px;
+    height: auto;
+}
+
+/* Main Content */
+.main-container {
+    background-color: #FFFFFF; /* Branco para o conteúdo principal */
     border-radius: 20px; /* Bordas mais arredondadas */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
-    padding: 30px 40px; /* Reduzido o padding superior e inferior */
+    padding: 30px 40px; /* Padding ajustado */
     max-width: 600px;
-    width: 100%;
+    width: 90%;
+    margin: 30px auto;
     backdrop-filter: blur(10px); /* Efeito de desfoque para o fundo */
-    position: relative; /* Para o z-index funcionar */
-    z-index: 1;
+    z-index: 2; /* Certifica-se de que o conteúdo principal está acima das nuvens */
+    position: relative;
 }
 
-h1 {
-    text-align: center;
-    color: #ffffff; /* Branco */
-    font-size: 2.5em; /* Tamanho reduzido para o título */
-    margin-bottom: 15px; /* Reduzido o espaçamento inferior */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-h1 .logo {
-    margin-right: 10px; /* Espaço entre a logo e o texto */
-    width: 50px; /* Ajustar o tamanho da logo conforme necessário */
-    height: auto; /* Manter a proporção da logo */
-}
-
-.form-container {
-    text-align: left;
+.date-block {
+    margin-bottom: 20px;
+    color: #FF4500; /* Laranja do topo */
 }
 
 .form-group {
     margin-bottom: 15px;
+    position: relative; /* Adicionado para posicionamento relativo da nuvem */
 }
 
 label {
     font-weight: bold;
-    color: #ffffff; /* Branco */
+    color: #FF4500; /* Laranja do topo */
     display: block;
     margin-bottom: 5px;
-    font-size: 1.2em; /* Tamanho da fonte dos labels */
+    font-size: 1.2em;
 }
 
-input[type=text], input[type=password] {
+textarea {
     width: 100%;
     padding: 14px;
     margin: 10px 0;
     box-sizing: border-box;
-    border: 2px solid #FF8C00; /* Borda laranja claro */
-    border-radius: 10px; /* Bordas mais arredondadas */
+    border: 2px solid #FFD700; /* Mostarda */
+    border-radius: 10px;
     font-size: 16px;
     font-family: 'Indie Flower', cursive;
     background: rgba(255, 255, 255, 0.1); /* Transparente para destacar o laranja */
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    color: #ffffff; /* Cor do texto branca */
+    color: #333333; /* Cinza Escuro */
+    resize: vertical; /* Permite o redimensionamento vertical */
+    z-index: 2; /* Certifica-se de que o textarea está acima das nuvens */
+    position: relative;
 }
 
 button[type=submit] {
     width: 100%; /* Cobrir toda a largura */
-    background-color: #FF8C00; /* Laranja claro */
-    color: #ffffff; /* Texto branco */
+    background-color: #FFD700; /* Mostarda */
+    color: #FF4500; /* Laranja do topo */
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Adiciona transição suave para a cor e a transformação */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     font-weight: bold; /* Texto em negrito */
     text-align: center;
     border: none; /* Remove a borda padrão */
     border-radius: 10px; /* Bordas arredondadas */
     padding: 14px;
     font-size: 16px;
+    z-index: 2; /* Certifica-se de que o botão está acima das nuvens */
+    position: relative;
 }
 
 button[type=submit]:hover {
-    background-color: #D84315; /* Laranja escuro */
+    background-color: #FF4500; /* Laranja do topo */
+    color: #FFFFFF; /* Texto branco */
     transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
 }
 
-a#register-link {
-    display: block;
+/* Footer */
+footer {
+    margin-top: auto; /* Empurra o footer para o final da página */
     width: 100%;
-    background-color: #FF8C00; /* Laranja claro */
-    color: #ffffff; /* Texto branco */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Adiciona transição suave para a cor e a transformação */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
-    font-weight: bold; /* Texto em negrito */
+    z-index: 2; /* Certifica-se de que o footer está acima das nuvens */
+    position: relative;
+}
+
+.footer-container {
     text-align: center;
-    border: none; /* Remove a borda padrão */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 14px;
-    font-size: 16px;
-    text-decoration: none; /* Remove a sublinha */
-    margin-top: 10px;
+    padding: 20px;
+    background-color: #FF4500; /* Laranja do topo */
+    color: #FFFFFF; /* Branco */
 }
 
-a#register-link:hover {
-    background-color: #D84315; /* Laranja escuro */
-    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+.footer-container p {
+    margin: 0;
+    font-size: 1em;
 }
 
-/* Adiciona espaçamento entre os botões */
-.form-group.submit-btn, .form-group.register-btn {
-    margin-top: 10px;
-}
-
-/* Efeitos de nuvem no plano de fundo */
+/* Clouds */
 .clouds {
-    position: absolute;
+    position: fixed; /* Fixe as nuvens no fundo */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 1; /* Certifica-se de que as nuvens estão abaixo do conteúdo principal */
+    pointer-events: none; /* Impede a interação com as nuvens */
     overflow: hidden;
 }
 
@@ -138,37 +148,26 @@ a#register-link:hover {
 }
 
 #cloud1 {
-    top: 5%;
-    left: 10%;
+    top: 10%;
+    left: 5%;
 }
 
 #cloud2 {
-    top: 20%;
-    left: 70%;
+    top: 70%;
+    right: 5%;
 }
 
 #cloud3 {
-    top: 50%;
-    left: 30%;
+    top: 20%;
+    left: 8%;
 }
 
-/* Adicione este bloco de código ao final do arquivo index.css */
-textarea {
-    width: 100%;
-    padding: 14px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: 2px solid #FFD700; /* Mostarda */
-    border-radius: 10px; /* Bordas mais arredondadas */
-    font-size: 16px;
-    font-family: 'Indie Flower', cursive;
-    background: rgba(255, 255, 255, 0.1); /* Transparente para destacar o laranja */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    color: #ffffff; /* Cor do texto branca */
-    resize: vertical; /* Permite o redimensionamento vertical */
-}
-
-/* Corrigir largura dos botões */
-button[type=submit], a#register-link {
-    width: 100%;
+/* Nuvem sobrepondo o canto do input */
+#cloud-over-input {
+    position: absolute;
+    width: 200px;
+    opacity: 0.7;
+    top: -115px; /* Ajuste para posicionar a nuvem sobre o canto do input */
+    right: -115px; /* Ajuste para posicionar a nuvem sobre o canto do input */
+    z-index: 1; /* Certifica-se de que a nuvem está abaixo do textarea */
 }

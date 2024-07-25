@@ -11,30 +11,23 @@
 <body>
     <header>
         <div class="header-container">
-            <h1><img src="{{ url_for('static', filename='images/logo_nap.png') }}" alt="Logo" class="logo"> Nap</h1>
-            <nav>
-                <a href="{{ url_for('views.index') }}">Início</a>
-            </nav>
+            <h1><a href="{{ url_for('views.index') }}"><img src="{{ url_for('static', filename='images/logo_nap.png') }}" alt="Logo" class="logo"></a> Nap</h1>
         </div>
     </header>
     <main>
-        <div class="container">
+        <div class="main-container">
             <h2>Análise do Sonho</h2>
-            <div class="dream-summary">
+            <div class="section">
                 <h3>Resumo do Sonho:</h3>
                 <p>{{ dream }}</p>
             </div>
-            <div class="analysis">
+            <div class="section">
                 <h3>Análise Psicológica:</h3>
                 <p>{{ ai_analysis }}</p>
             </div>
-            <div class="suggestions">
+            <div class="section">
                 <h3>Sugestões Criativas:</h3>
                 <p>{{ suggestions }}</p>
-            </div>
-            <div class="visualizations">
-                <h3>Visualizações:</h3>
-                <img src="{{ url_for('static', filename='images/placeholder_graph.png') }}" alt="Placeholder Graph" class="graph">
             </div>
         </div>
     </main>
@@ -43,5 +36,10 @@
             <p>&copy; 2024 Nap. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <div class="clouds">
+        <img src="{{ url_for('static', filename='images/nuvem.png') }}" class="cloud" id="cloud1">
+        <img src="{{ url_for('static', filename='images/nuvem.png') }}" class="cloud" id="cloud2">
+        <img src="{{ url_for('static', filename='images/nuvem.png') }}" class="cloud" id="cloud3">
+    </div>
 </body>
 </html>

@@ -1,74 +1,67 @@
+/* login.css */
+
 body {
     font-family: 'Indie Flower', cursive;
-    background: linear-gradient(to bottom, #8B2C10, #B35408, #CC8E1F);
-    background-blend-mode: multiply;
-    color: #ffffff; /* Branco para o texto */
+    background-color: #FF4500; /* Laranja do topo */
+    color: #FFFFFF; /* Branco para o texto */
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
-    overflow: hidden;
+    overflow: auto; /* Permite barra de rolagem */
     position: relative;
 }
 
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+.header-container {
     width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><filter id="a" x="0" y="0"><feTurbulence baseFrequency="0.05" numOctaves="3" result="t"/><feDisplacementMap in="SourceGraphic" in2="t" scale="50"/></filter></defs><rect width="100%" height="100%" filter="url(#a)" /></svg>');
-    opacity: 0.4; /* Ajuste a opacidade conforme necessário */
-    z-index: -1;
+    padding: 20px;
+    background-color: #FF4500; /* Laranja do topo */
+    z-index: 2; /* Certifica-se de que o header está acima das nuvens */
+    position: relative;
 }
 
-.container {
-    background-color: rgba(255, 255, 255, 0.2); /* Transparência para destacar o laranja */
+.header-container h1 {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF; /* Branco */
+    justify-content: center;
+}
+
+.header-container .logo {
+    margin-right: 10px;
+    width: 50px;
+    height: auto;
+}
+
+/* Main Content */
+.main-container {
+    background-color: #FFFFFF; /* Branco para o conteúdo principal */
     border-radius: 20px; /* Bordas mais arredondadas */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
-    padding: 30px 40px; /* Reduzido o padding superior e inferior */
+    padding: 30px 40px; /* Padding ajustado */
     max-width: 600px;
-    width: 100%;
+    width: 90%;
+    margin: 30px auto;
     backdrop-filter: blur(10px); /* Efeito de desfoque para o fundo */
-    position: relative; /* Para o z-index funcionar */
-    z-index: 1;
-}
-
-h1 {
-    text-align: center;
-    color: #ffffff; /* Branco */
-    font-size: 2.5em; /* Tamanho reduzido para o título */
-    margin-bottom: 15px; /* Reduzido o espaçamento inferior */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-h1 .logo {
-    margin-right: 10px; /* Espaço entre a logo e o texto */
-    width: 50px; /* Ajustar o tamanho da logo conforme necessário */
-    height: auto; /* Manter a proporção da logo */
-}
-
-.form-container {
-    text-align: left;
+    z-index: 2; /* Certifica-se de que o conteúdo principal está acima das nuvens */
+    position: relative;
 }
 
 .form-group {
     margin-bottom: 15px;
+    position: relative; /* Adicionado para posicionamento relativo da nuvem */
 }
 
 label {
     font-weight: bold;
-    color: #ffffff; /* Branco */
+    color: #FF4500; /* Laranja do topo */
     display: block;
     margin-bottom: 5px;
-    font-size: 1.2em; /* Tamanho da fonte dos labels */
+    font-size: 1.2em;
 }
 
 input[type=text], input[type=password] {
@@ -77,48 +70,66 @@ input[type=text], input[type=password] {
     margin: 10px 0;
     box-sizing: border-box;
     border: 2px solid #FFD700; /* Mostarda */
-    border-radius: 10px; /* Bordas mais arredondadas */
+    border-radius: 10px;
     font-size: 16px;
     font-family: 'Indie Flower', cursive;
     background: rgba(255, 255, 255, 0.1); /* Transparente para destacar o laranja */
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    color: #ffffff; /* Cor do texto branca */
+    color: #333333; /* Cinza Escuro */
 }
 
-/* Estilo para os links */
-a.custom-link {
-    display: inline-block;
-    width: 80%; /* Aumenta a largura dos links */
-    padding: 20px; /* Aumenta o padding para mais destaque */
-    margin: 2px 0; /* Reduz a margem vertical para aproximar os links */
-    color: #FFD700; /* Mostarda */
-    font-size: 1.5em; /* Aumenta o tamanho da fonte */
-    font-weight: bold;
-    text-decoration: none; /* Remove a sublinha */
-    transition: color 0.3s, transform 0.3s; /* Adiciona transição suave para a cor e a transformação */
+button[type=submit], button[type=button] {
+    width: 100%; /* Cobrir toda a largura */
+    background-color: #FFD700; /* Mostarda */
+    color: #FF4500; /* Laranja do topo */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-weight: bold; /* Texto em negrito */
+    text-align: center;
+    border: none; /* Remove a borda padrão */
     border-radius: 10px; /* Bordas arredondadas */
-    background-color: transparent; /* Fundo transparente */
+    padding: 14px;
+    font-size: 16px;
+    z-index: 2; /* Certifica-se de que o botão está acima das nuvens */
+    position: relative;
 }
 
-a.custom-link:hover {
-    color: #ffffff; /* Texto branco ao passar o mouse */
+button[type=submit]:hover, button[type=button]:hover {
+    background-color: #FF4500; /* Laranja do topo */
+    color: #FFFFFF; /* Texto branco */
     transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
 }
 
-/* Adiciona espaçamento entre os links */
-.form-group.submit-btn, .form-group.register-btn {
-    margin-top: 10px;
-    text-align: center; /* Centraliza o conteúdo do grupo de formulários */
+/* Footer */
+footer {
+    margin-top: auto; /* Empurra o footer para o final da página */
+    width: 100%;
+    z-index: 2; /* Certifica-se de que o footer está acima das nuvens */
+    position: relative;
 }
 
-/* Efeitos de nuvem no plano de fundo */
+.footer-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #FF4500; /* Laranja do topo */
+    color: #FFFFFF; /* Branco */
+}
+
+.footer-container p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Clouds */
 .clouds {
-    position: absolute;
+    position: fixed; /* Fixe as nuvens no fundo */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 1; /* Certifica-se de que as nuvens estão abaixo do conteúdo principal */
+    pointer-events: none; /* Impede a interação com as nuvens */
     overflow: hidden;
 }
 
@@ -129,16 +140,16 @@ a.custom-link:hover {
 }
 
 #cloud1 {
-    top: 5%;
-    left: 10%;
+    top: 18%;
+    left: 5%;
 }
 
 #cloud2 {
-    top: 20%;
-    left: 70%;
+    top: 40%;
+    right: 10%;
 }
 
 #cloud3 {
-    top: 50%;
-    left: 30%;
+    top: 70%;
+    left: 40%;
 }

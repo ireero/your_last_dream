@@ -1,84 +1,173 @@
-/* views.css */
+/* index.css */
+
+body {
+    font-family: 'Indie Flower', cursive;
+    background-color: #FF4500; /* Laranja do topo */
+    color: #000; /* Branco para o texto */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow: auto; /* Permite barra de rolagem */
+    position: relative;
+}
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
     padding: 20px;
-    background-color: #D84315; /* Cor laranja escuro */
+    background-color: #FF4500; /* Laranja do topo */
+    z-index: 2; /* Certifica-se de que o header está acima das nuvens */
+    position: relative;
 }
 
 .header-container h1 {
     display: flex;
     align-items: center;
-    color: #ffffff;
+    color: #FFFFFF; /* Branco */
+    justify-content: center;
 }
 
 .header-container .logo {
     margin-right: 10px;
-    width: 40px;
+    width: 50px;
     height: auto;
 }
 
-.header-container nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.2em;
-    margin-left: 20px;
-}
-
-.header-container nav a:hover {
-    text-decoration: underline;
-}
-
 /* Main Content */
-.container {
-    background-color: rgba(255, 255, 255, 0.3); /* Transparência para destacar o laranja */
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    padding: 20px 30px;
-    max-width: 800px;
+.main-container {
+    background-color: #FFFFFF; /* Branco para o conteúdo principal */
+    border-radius: 20px; /* Bordas mais arredondadas */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais suave e expansiva */
+    padding: 30px 40px; /* Padding ajustado */
+    max-width: 600px;
     width: 90%;
     margin: 30px auto;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Efeito de desfoque para o fundo */
+    z-index: 2; /* Certifica-se de que o conteúdo principal está acima das nuvens */
+    position: relative;
 }
 
-.container h2, .container h3 {
-    color: #000000; /* Mudança de cor para preto */
-    text-align: center;
+.date-block {
     margin-bottom: 20px;
+    color: #FF4500; /* Laranja do topo */
 }
 
-.container p {
-    color: #000000; /* Mudança de cor para preto */
-    font-size: 1.2em;
-    line-height: 1.6em;
+.form-group {
+    margin-bottom: 15px;
+    position: relative; /* Adicionado para posicionamento relativo da nuvem */
 }
 
-.visualizations {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.visualizations img.graph {
+label {
+    font-weight: bold;
+    color: #FF4500; /* Laranja do topo */
     display: block;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+textarea {
     width: 100%;
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 14px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 2px solid #FFD700; /* Mostarda */
     border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Indie Flower', cursive;
+    background: rgba(255, 255, 255, 0.1); /* Transparente para destacar o laranja */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #333333; /* Cinza Escuro */
+    resize: vertical; /* Permite o redimensionamento vertical */
+    z-index: 2; /* Certifica-se de que o textarea está acima das nuvens */
+    position: relative;
+}
+
+button[type=submit] {
+    width: 100%; /* Cobrir toda a largura */
+    background-color: #FFD700; /* Mostarda */
+    color: #FF4500; /* Laranja do topo */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-weight: bold; /* Texto em negrito */
+    text-align: center;
+    border: none; /* Remove a borda padrão */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 14px;
+    font-size: 16px;
+    z-index: 2; /* Certifica-se de que o botão está acima das nuvens */
+    position: relative;
+}
+
+button[type=submit]:hover {
+    background-color: #FF4500; /* Laranja do topo */
+    color: #FFFFFF; /* Texto branco */
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
 }
 
 /* Footer */
+footer {
+    margin-top: auto; /* Empurra o footer para o final da página */
+    width: 100%;
+    z-index: 2; /* Certifica-se de que o footer está acima das nuvens */
+    position: relative;
+}
+
 .footer-container {
     text-align: center;
     padding: 20px;
-    background-color: #D84315; /* Cor laranja escuro */
-    color: #ffffff;
+    background-color: #FF4500; /* Laranja do topo */
+    color: #FFFFFF; /* Branco */
 }
 
 .footer-container p {
     margin: 0;
     font-size: 1em;
+}
+
+/* Clouds */
+.clouds {
+    position: fixed; /* Fixe as nuvens no fundo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Certifica-se de que as nuvens estão abaixo do conteúdo principal */
+    pointer-events: none; /* Impede a interação com as nuvens */
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    width: 200px; /* Ajustar o tamanho das nuvens conforme necessário */
+    opacity: 0.7;
+}
+
+#cloud1 {
+    top: 10%;
+    left: 10%;
+}
+
+#cloud2 {
+    top: 40%;
+    right: 10%;
+}
+
+#cloud3 {
+    top: 70%;
+    left: 40%;
+}
+
+/* Nuvem sobrepondo o canto do input */
+#cloud-over-input {
+    position: absolute;
+    width: 80px; /* Ajustado para não cobrir muito o input */
+    opacity: 0.7;
+    top: -10px; /* Ajuste para posicionar a nuvem sobre o canto do input */
+    right: -10px; /* Ajuste para posicionar a nuvem sobre o canto do input */
+    z-index: 1; /* Certifica-se de que a nuvem está abaixo do textarea */
 }

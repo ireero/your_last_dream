@@ -7,7 +7,7 @@ from .app import db
 
 actions = Blueprint('actions', __name__)
 
-@actions.route('/login', methods=['POST'])
+@actions.route('/login', methods=['POST','GET'])
 def login():
 
     user = request.form['username']
@@ -42,7 +42,7 @@ def register_and_analise_dream():
 
         date = datetime.now().strftime('%Y%m%d')
         time = datetime.now().strftime('%H:%M')
-        new_dream = Dreams(text_dream=dream, date=date, time=time)
+        # new_dream = Dreams(text_dream=dream, date=date, time=time)
         # db.session.add(new_dream)
         # db.session.commit()
         return redirect(url_for('views.view_analysis', dream=dream, ai_analysis=final_response_text_psicologic, suggestions=final_response_imaginary_gestions))
