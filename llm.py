@@ -31,6 +31,8 @@ class LLM:
         template = f"""Aqui está o sonho desta pessoa: {dream}.
                         Preciso que você aponte ao menos 5 idéias criativas para esta pessoa.
                             Apresente uma lista numerada com cada ideia e o motivo da ideia estar relacionada ao sonho.
+                        
+                            Formate o texto usando markdown.
                         """
         final_text_result = self.llm.invoke(
             [

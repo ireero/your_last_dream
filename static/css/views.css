@@ -1,7 +1,7 @@
 /* index.css */
 
 body {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'EB Garamond', sans-serif;
     background-color: #FF4500; /* Laranja do topo */
     color: #000; /* Branco para o texto */
     margin: 0;
@@ -170,4 +170,8 @@ footer {
     top: -10px; /* Ajuste para posicionar a nuvem sobre o canto do input */
     right: -10px; /* Ajuste para posicionar a nuvem sobre o canto do input */
     z-index: 1; /* Certifica-se de que a nuvem está abaixo do textarea */
+}
+
+.align_text {
+    text-align: justify;
 }

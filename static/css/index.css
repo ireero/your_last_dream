@@ -1,7 +1,7 @@
 /* index.css */
 
 body {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'EB Garamond', cursive;
     background-color: #FF4500; /* Laranja do topo */
     color: #FFFFFF; /* Branco para o texto */
     margin: 0;
@@ -66,6 +66,7 @@ label {
     color: #FF4500; /* Laranja do topo */
     display: block;
     margin-bottom: 5px;
+    text-align: left;
     font-size: 1.2em;
 }
 

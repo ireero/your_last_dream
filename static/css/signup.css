@@ -1,7 +1,7 @@
 /* signup.css */
 
 body {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'EB Garamond', cursive;
     background-color: #FF4500; /* Laranja do topo */
     color: #FFFFFF; /* Branco para o texto */
     margin: 0;
@@ -61,6 +61,7 @@ label {
     display: block;
     margin-bottom: 5px;
     font-size: 1.2em;
+    text-align: left;
 }
 
 input[type=text], input[type=email], input[type=password] {
@@ -149,8 +150,8 @@ footer {
 }
 
 #cloud3 {
-    top: 70%;
-    left: 40%;
+    top: 60%;
+    left: 20%;
 }
 
 /* Nuvem sobrepondo o canto do input */

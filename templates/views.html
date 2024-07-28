@@ -17,17 +17,17 @@
     <main>
         <div class="main-container">
             <h2>Análise do Sonho</h2>
-            <div class="section">
+            <div>
                 <h3>Resumo do Sonho:</h3>
-                <p>{{ dream }}</p>
+                <p class="align_text">{{ dream }}</p>
             </div>
-            <div class="section">
+            <div>
                 <h3>Análise Psicológica:</h3>
-                <p>{{ ai_analysis }}</p>
+                <p class="align_text">{{ ai_analysis }}</p>
             </div>
-            <div class="section">
+            <div>
                 <h3>Sugestões Criativas:</h3>
-                <p>{{ suggestions }}</p>
+                <p class="align_text">{{ suggestions | safe }}</p>
             </div>
         </div>
     </main>
