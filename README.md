@@ -128,15 +128,3 @@ nap/
 │   │   ├── nuvem.png
 └── migrations/
 ```
-
-## Contribuição
-
-1. Fork este repositório.
-2. Crie um branch para sua feature (`git checkout -b feature/nova-feature`).
-3. Commit suas mudanças (`git commit -am 'Adicionei uma nova feature'`).
-4. Push para o branch (`git push origin feature/nova-feature`).
-5. Crie um novo Pull Request.
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
