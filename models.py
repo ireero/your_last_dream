@@ -20,6 +20,7 @@ class Users(BaseModel):
     user_name = db.Column(db.String(50), nullable=False)
     user_email = db.Column(db.String(100), nullable=False, unique=True, index=True)
     user_pwd_hash = db.Column(db.String(128), nullable=False)
+    profession = db.Column(db.String(50), nullable=False)  # Novo campo
 
     def set_password(self, password):
         self.user_pwd_hash = generate_password_hash(password)

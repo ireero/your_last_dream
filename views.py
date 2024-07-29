@@ -11,6 +11,10 @@ def index():
     print('aqui')
     return render_template('login.html')
 
+@views.route('/dream')
+def dream_page():
+    return render_template('index.html')
+
 @views.route('/view_analysis')
 def view_analysis():
     dream = request.args.get('dream')

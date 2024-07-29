@@ -36,10 +36,13 @@ def login():
 
 @actions.route('/register', methods=['POST', 'GET'])
 def register():
-    if request.method == 'POST':
+    print('Aqui')
+    print(f'Analisado -> {request}')
+    try:
         user_name = request.form['username']
         user_email = request.form['email']
         user_pwd = request.form['password']
+        user_profession = request.form['profession']
         
         # Hashing the password
         user_pwd_hash = generate_password_hash(user_pwd)
@@ -48,13 +51,15 @@ def register():
         existing_user = Users.query.filter_by(user_email=user_email).first()
         if existing_user:
             flash('Este email já existe')
+            print('Este email já existe')
             return redirect(url_for('actions.register'))
         
         # Creating a new user and saving to the database
         new_user = Users(
             user_name=user_name,
             user_email=user_email,
-            user_pwd_hash=user_pwd_hash
+            user_pwd_hash=user_pwd_hash,
+            profession=user_profession
         )
         db.session.add(new_user)
         db.session.commit()
@@ -63,7 +68,9 @@ def register():
         session['user_id'] = new_user.id
         session['user_name'] = new_user.user_name
         flash('Registro bem-sucedido e login automático realizado.')
-        return redirect(url_for('views.index'))  # Redirecionar para a página index
+        return redirect(url_for('views.dream_page'))  # Redirecionar para a página index
+    except Exception as e:
+        print(f'Erro de processo -> {e}')
     return render_template('signup.html')
 
 
