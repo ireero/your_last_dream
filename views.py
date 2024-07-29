@@ -8,7 +8,6 @@ views = Blueprint('views', __name__)
 @views.route('/', methods=['GET', 'POST'])
 def index():
     # today_date = datetime.today().strftime('%d/%m/%Y')
-    print('aqui')
     return render_template('login.html')
 
 @views.route('/dream')

@@ -27,7 +27,7 @@ def login():
             session['user_id'] = user_record.id
             session['user_name'] = user_record.user_name
             flash('Login bem-sucedido!')
-            return redirect(url_for('views.index'))
+            return redirect(url_for('views.dream_page'))
         else:
             flash('Nome de usuário ou senha incorretos. Tente novamente.')
             return redirect(url_for('actions.login'))
