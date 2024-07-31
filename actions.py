@@ -1,6 +1,5 @@
 from flask import Blueprint, request, redirect, url_for, render_template, flash, session
 from .llm import LLM
-from datetime import datetime
 from .models import Dreams, Users
 from .app import db
 import markdown
@@ -13,6 +12,7 @@ def login():
     if request.method == 'POST':
         user = request.form['username']
         pwd = request.form['password']
+
         
         print(f'Received login request for user: {user}')
         
@@ -26,6 +26,7 @@ def login():
         if user_record and check_password_hash(user_record.user_pwd_hash, pwd):
             session['user_id'] = user_record.id
             session['user_name'] = user_record.user_name
+            session['user_profession'] = user_record.profession
             flash('Login bem-sucedido!')
             return redirect(url_for('views.dream_page'))
         else:
@@ -36,8 +37,6 @@ def login():
 
 @actions.route('/register', methods=['POST', 'GET'])
 def register():
-    print('Aqui')
-    print(f'Analisado -> {request}')
     try:
         user_name = request.form['username']
         user_email = request.form['email']
@@ -54,12 +53,14 @@ def register():
             print('Este email já existe')
             return redirect(url_for('actions.register'))
         
+        llm = LLM()
+
         # Creating a new user and saving to the database
         new_user = Users(
             user_name=user_name,
             user_email=user_email,
             user_pwd_hash=user_pwd_hash,
-            profession=user_profession
+            profession=llm.profession_verification(profession=user_profession).lower().strip()
         )
         db.session.add(new_user)
         db.session.commit()
